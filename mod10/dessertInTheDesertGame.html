@@ -1,0 +1,72 @@
+<html><head><title>Dessert in the Desert Game</title><style>
+
+/* Week10 CSS Activity Code goes here */
+body {
+	background-color:#F4A460; /* Sandy Brown */
+}
+/* stylize the button and make its position absolute */
+button {
+	color: #FFEBCD; /* Blanched Almond */
+	background-color: #D2691E; /* Chocolate */
+  	border: #D2691E; /* Chocolate */
+	width: 80px;
+	height: 32px;
+  	font-size: 16px;
+	border-radius: 8px;
+	position: absolute;
+	outline: none;
+}
+
+/* Change the background color with text color when hover */
+button:hover {
+  background-color: #FFEBCD; /* Blanched Almond */
+  color: #D2691E; /* Chocolate */
+}
+
+</style><script>
+
+/* Week10 JS Activity Code goes here */
+/* (ignore while working on Week10 CSS Activity) */
+function randomizeButtonPositions() {
+  let buttons = document.querySelectorAll("button");
+  buttons.forEach( (b) => { 
+    b.style.left = (Math.random()*80+10)+"%"; 
+    b.style.top = (Math.random()*80+10)+"%"; 
+  } );
+}
+
+let score = 0;	/* variable to keep track of user score */
+
+/* increment score by one when the right button is clicked */
+function handleDessertClick() {
+	score++;
+	let ps = document.querySelectorAll("p");
+	ps[0].innerHTML = "Score: " + score;
+	randomizeButtonPositions();
+}
+
+/* decrement score by one when the wrong button is clicked */
+function handleDesertClick() {
+	score--;
+        let ps = document.querySelectorAll("p");
+        ps[0].innerHTML = "Score: " + score;
+        randomizeButtonPositions();
+}
+
+
+</script></head><body onload="randomizeButtonPositions()">
+
+<p>Score: 0</p>
+
+<button onclick="handleDessertClick();" >Dessert</button>
+<button onclick="handleDesertClick();" >Desert</button>
+<button onclick="handleDesertClick();" >Desert</button>
+<button onclick="handleDesertClick();" >Desert</button>
+<button onclick="handleDesertClick();" >Desert</button>
+<button onclick="handleDesertClick();" >Desert</button>
+<button onclick="handleDesertClick();" >Desert</button>
+<button onclick="handleDesertClick();" >Desert</button>
+
+
+
+</body></html>
